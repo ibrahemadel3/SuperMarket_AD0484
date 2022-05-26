@@ -19,7 +19,8 @@ namespace SuperMarket_AD0484
         }
         void GetAllCourses()
         {
-            OleDbConnection con = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; " + "Data Source = C:\\Users\\SCHOOL\\Desktop\\rahaf AB1506\\Restaurant_AB1506.accdb");
+            OleDbConnection con = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; " +
+                "Data Source =C:\\Users\\SCHOOL\\Desktop\\ibrahem AD0484\\SuperMarket_AD0484.accdb");
             DataTable dt = new DataTable();
             OleDbDataAdapter adapter = new OleDbDataAdapter("Select * from Courses", con);
             con.Open();
@@ -33,10 +34,10 @@ namespace SuperMarket_AD0484
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
                 "Data Source=C:\\Users\\SCHOOL\\Desktop\\ibrahem AD0484\\SuperMarket_AD0484.accdb");
             con.Open();
-            OleDbCommand cmd = new OleDbCommand("Insert into Courses values(@ID, @Student, @IdNumber)", con);
+            OleDbCommand cmd = new OleDbCommand("Insert into Courses values(@ID, @Name, @Number)", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(txtID.Text));
-            cmd.Parameters.AddWithValue("@Student", txtName.Text);
-            cmd.Parameters.AddWithValue("@IdNumber", int.Parse(txtNumber.Text));
+            cmd.Parameters.AddWithValue("@Name", txtName.Text);
+            cmd.Parameters.AddWithValue("@Number", int.Parse(txtNumber.Text));
 
             cmd.ExecuteNonQuery();
             con.Close();
@@ -44,26 +45,9 @@ namespace SuperMarket_AD0484
             GetAllCourses();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            string update = "UPDATE courses" + " SET student=@Student, idnumber=@IdNumber " + "WHERE id=@ID";
-            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
-                "Data Source=C:\\Users\\SCHOOL\\Desktop\\ibrahem AD0484\\SuperMarket_AD0484.accdb");
-            con.Open();
-            OleDbCommand cmd = new OleDbCommand(update, con);
-            cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtID.Text));
-            cmd.Parameters.AddWithValue("@Student", txtName.Text);
-            cmd.Parameters.AddWithValue("@IdNumber", int.Parse(txtNumber.Text));
-
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Update Complete");
-            GetAllCourses();
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string delete = "Delete From courses Where ID=@ID";
+            string delete = "Delete From Courses Where ID=@ID";
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
                 "Data Source=C:\\Users\\SCHOOL\\Desktop\\ibrahem AD0484\\SuperMarket_AD0484.accdb");
 
@@ -82,6 +66,11 @@ namespace SuperMarket_AD0484
             txtID.Text = dwgCourses.CurrentRow.Cells[0].Value.ToString();
             txtName.Text = dwgCourses.CurrentRow.Cells[1].Value.ToString();
             txtNumber.Text = dwgCourses.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            GetAllCourses();
         }
     }
 }
