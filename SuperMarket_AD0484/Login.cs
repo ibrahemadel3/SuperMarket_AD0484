@@ -52,13 +52,5 @@ namespace SuperMarket_AD0484
                 lblwel.Text = "welcome " + _user;
             
         }
-
-        private void btnDataBase_Click(object sender, EventArgs e)
-        {
-            Form4 frm4 = new Form4();
-            frm4.TopLevel = false;
-            this.panel3.Controls.Add(frm4);
-            frm4.Show();
-        }
     }
 }

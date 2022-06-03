@@ -36,7 +36,6 @@ namespace SuperMarket_AD0484
             this.btnJuices = new System.Windows.Forms.Button();
             this.btnlegumes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnDataBase = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +66,6 @@ namespace SuperMarket_AD0484
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnDataBase);
             this.panel2.Controls.Add(this.btncoffee);
             this.panel2.Controls.Add(this.btnJuices);
             this.panel2.Controls.Add(this.btnlegumes);
@@ -120,17 +118,6 @@ namespace SuperMarket_AD0484
             this.panel3.Size = new System.Drawing.Size(266, 238);
             this.panel3.TabIndex = 2;
             // 
-            // btnDataBase
-            // 
-            this.btnDataBase.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnDataBase.Location = new System.Drawing.Point(20, 196);
-            this.btnDataBase.Name = "btnDataBase";
-            this.btnDataBase.Size = new System.Drawing.Size(89, 29);
-            this.btnDataBase.TabIndex = 3;
-            this.btnDataBase.Text = "DataBase";
-            this.btnDataBase.UseVisualStyleBackColor = true;
-            this.btnDataBase.Click += new System.EventHandler(this.btnDataBase_Click);
-            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +145,5 @@ namespace SuperMarket_AD0484
         private System.Windows.Forms.Button btnlegumes;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblwel;
-        private System.Windows.Forms.Button btnDataBase;
     }
 }
